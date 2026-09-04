@@ -36,10 +36,22 @@
 #sidebar.collapsed .nav-badge {
     display: none;
 }
-#sidebar.collapsed .brand {
+/* The brand block is page content, so collapse it structurally: the
+   sidebar's first child div is always the brand row, and the brand link is
+   always <a href="/index.html"> with an icon span + a text span. Hide the
+   text span, keep the icon, and center the row. Works on every page variant
+   (dark/light/collapsible, plus the custom-brand pages). */
+#sidebar.collapsed > div:first-child {
     justify-content: center;
     padding-left: 0;
     padding-right: 0;
+}
+#sidebar.collapsed > div:first-child > a {
+    justify-content: center;
+    gap: 0;
+}
+#sidebar.collapsed > div:first-child > a > span:last-child {
+    display: none;
 }
 #sidebar.collapsed nav a {
     justify-content: center;

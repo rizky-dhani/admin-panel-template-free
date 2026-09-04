@@ -66,7 +66,7 @@ const SHELL = {
       `                            src="https://i.pravatar.cc/80?img=12"\n` +
       `                            alt="User"\n` +
       `                        />\n` +
-      `                        <div class="min-w-0 flex-1">\n` +
+      `                        <div class="user-info min-w-0 flex-1">\n` +
       `                            <p class="truncate text-sm font-medium text-white">\n` +
       `                                Alex Morgan\n` +
       `                            </p>\n` +
@@ -148,7 +148,7 @@ const SHELL = {
       `                            src="https://i.pravatar.cc/80?img=12"\n` +
       `                            alt="User"\n` +
       `                        />\n` +
-      `                        <div class="min-w-0 flex-1">\n` +
+      `                        <div class="user-info min-w-0 flex-1">\n` +
       `                            <p\n` +
       `                                class="truncate text-sm font-medium text-gray-900"\n` +
       `                            >\n` +
