@@ -58,7 +58,7 @@ const SHELL = {
       `                <div class="relative border-t border-gray-800 p-4">\n` +
       `                    <button\n` +
       `                        data-dropdown="sidebar-user-menu"\n` +
-      `                        class="flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"\n` +
+      `                        class="user-box flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"\n` +
       `                        type="button"\n` +
       `                    >\n` +
       `                        <img\n` +
@@ -140,7 +140,7 @@ const SHELL = {
       `                <div class="relative border-t border-gray-200 p-4">\n` +
       `                    <button\n` +
       `                        data-dropdown="sidebar-user-menu"\n` +
-      `                        class="flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"\n` +
+      `                        class="user-box flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"\n` +
       `                        type="button"\n` +
       `                    >\n` +
       `                        <img\n` +
@@ -454,6 +454,19 @@ function inject(html, filePath) {
       return shell.open;
     },
   );
+
+  // collapse toggle — inject the #sidebar-collapse button into every page's
+  // topbar right after the #sidebar-toggle button, unless the page already
+  // defines one (the collapsible showcase page does). Single-source: this
+  // avoids hand-editing 66 topbars.
+  if (!html.includes('id="sidebar-collapse"')) {
+    html = html.replace(
+      /(<button\s+id="sidebar-toggle"[\s\S]*?<\/button>)/,
+      (_m, toggleBtn) =>
+        toggleBtn +
+        `\n        <button\n            id="sidebar-collapse"\n            class="hidden rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 lg:block"\n            title="Toggle sidebar"\n        >\n            <svg\n                class="h-5 w-5"\n                fill="none"\n                stroke="currentColor"\n                viewBox="0 0 24 24"\n            >\n                <path\n                    stroke-linecap="round"\n                    stroke-linejoin="round"\n                    stroke-width="2"\n                    d="M11 19l-7-7 7-7m8 14l-7-7 7-7"\n                />\n            </svg>\n        </button>`,
+    );
+  }
 
   // sidebar nav (nav + user menu + close)
   html = html.replace(
