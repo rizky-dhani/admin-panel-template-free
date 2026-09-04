@@ -1,0 +1,350 @@
+{
+  "sections": [
+    {
+      "key": "dashboards",
+      "label": "Dashboards",
+      "icon": "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+      "pages": [
+        {
+          "label": "Analytics",
+          "href": "/pages/dashboards/analytics.html"
+        },
+        {
+          "label": "E-commerce",
+          "href": "/pages/dashboards/ecommerce.html"
+        },
+        {
+          "label": "Minimal",
+          "href": "/pages/dashboards/minimal.html"
+        }
+      ]
+    },
+    {
+      "key": "layouts",
+      "label": "Layouts",
+      "icon": "M4 6h16M4 12h16M4 18h16",
+      "pages": [
+        {
+          "label": "Dark Sidebar",
+          "href": "/pages/layouts/sidebar-dark.html"
+        },
+        {
+          "label": "Light Sidebar",
+          "href": "/pages/layouts/sidebar-light.html"
+        },
+        {
+          "label": "Top Navigation",
+          "href": "/pages/layouts/topnav.html"
+        },
+        {
+          "label": "Collapsible Sidebar",
+          "href": "/pages/layouts/sidebar-collapsible.html"
+        }
+      ]
+    },
+    {
+      "key": "tables",
+      "label": "Tables",
+      "icon": "M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z",
+      "pages": [
+        {
+          "label": "Standard Table",
+          "href": "/pages/tables/table-standard.html"
+        },
+        {
+          "label": "Card Table",
+          "href": "/pages/tables/table-card.html"
+        },
+        {
+          "label": "Dense Table",
+          "href": "/pages/tables/table-dense.html"
+        }
+      ]
+    },
+    {
+      "key": "forms",
+      "label": "Forms",
+      "icon": "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+      "pages": [
+        {
+          "label": "Basic Form",
+          "href": "/pages/forms/form-basic.html"
+        },
+        {
+          "label": "Advanced Form",
+          "href": "/pages/forms/form-advanced.html"
+        },
+        {
+          "label": "Validation",
+          "href": "/pages/forms/form-validation.html"
+        }
+      ]
+    },
+    {
+      "key": "auth",
+      "label": "Auth",
+      "icon": "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+      "pages": [
+        {
+          "label": "Centered Card",
+          "href": "/pages/auth/login-centered.html"
+        },
+        {
+          "label": "Split Layout",
+          "href": "/pages/auth/login-split.html"
+        },
+        {
+          "label": "Modern Gradient",
+          "href": "/pages/auth/login-modern.html"
+        }
+      ]
+    },
+    {
+      "key": "components",
+      "label": "Components",
+      "icon": "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+      "pages": [
+        {
+          "label": "Buttons",
+          "href": "/pages/components/buttons.html"
+        },
+        {
+          "label": "Badges & Alerts",
+          "href": "/pages/components/badges-alerts.html"
+        },
+        {
+          "label": "Cards",
+          "href": "/pages/components/cards.html"
+        }
+      ]
+    },
+    {
+      "key": "profile",
+      "label": "Profile",
+      "icon": "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
+      "pages": [
+        {
+          "label": "User Profile",
+          "href": "/pages/profile/profile.html"
+        },
+        {
+          "label": "Account Settings",
+          "href": "/pages/profile/settings.html"
+        },
+        {
+          "label": "Notifications",
+          "href": "/pages/profile/notifications.html"
+        }
+      ]
+    },
+    {
+      "key": "charts",
+      "label": "Charts",
+      "icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      "pages": [
+        {
+          "label": "Bar Chart",
+          "href": "/pages/charts/chart-bars.html"
+        },
+        {
+          "label": "Line Chart",
+          "href": "/pages/charts/chart-line.html"
+        },
+        {
+          "label": "Donut & Pie",
+          "href": "/pages/charts/chart-donut.html"
+        }
+      ]
+    },
+    {
+      "key": "navigation",
+      "label": "Navigation",
+      "icon": "M4 6h16M4 12h16M4 18h16",
+      "pages": [
+        {
+          "label": "Sidebar Navigation",
+          "href": "/pages/navigation/sidebar-navigation.html"
+        },
+        {
+          "label": "Breadcrumbs",
+          "href": "/pages/navigation/breadcrumbs.html"
+        },
+        {
+          "label": "Pagination",
+          "href": "/pages/navigation/pagination.html"
+        }
+      ]
+    },
+    {
+      "key": "modals",
+      "label": "Modals",
+      "icon": "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+      "pages": [
+        {
+          "label": "Basic Modals",
+          "href": "/pages/modals/modal-basic.html"
+        },
+        {
+          "label": "Confirmation",
+          "href": "/pages/modals/modal-confirmation.html"
+        },
+        {
+          "label": "Form Modals",
+          "href": "/pages/modals/modal-form.html"
+        }
+      ]
+    },
+    {
+      "key": "toasts",
+      "label": "Toasts",
+      "icon": "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      "pages": [
+        {
+          "label": "Notifications",
+          "href": "/pages/toasts/toast-notifications.html"
+        },
+        {
+          "label": "Positions",
+          "href": "/pages/toasts/toast-positions.html"
+        },
+        {
+          "label": "Stacked",
+          "href": "/pages/toasts/toast-stacked.html"
+        }
+      ]
+    },
+    {
+      "key": "errors",
+      "label": "Errors",
+      "icon": "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      "pages": [
+        {
+          "label": "404 Not Found",
+          "href": "/pages/errors/error-404.html"
+        },
+        {
+          "label": "403 Forbidden",
+          "href": "/pages/errors/error-403.html"
+        },
+        {
+          "label": "500 Server Error",
+          "href": "/pages/errors/error-500.html"
+        }
+      ]
+    },
+    {
+      "key": "users",
+      "label": "Users",
+      "icon": "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+      "pages": [
+        {
+          "label": "User List",
+          "href": "/pages/users/user-list.html"
+        },
+        {
+          "label": "User Grid",
+          "href": "/pages/users/user-grid.html"
+        },
+        {
+          "label": "User Profile",
+          "href": "/pages/users/user-profile.html"
+        }
+      ]
+    },
+    {
+      "key": "pricing",
+      "label": "Pricing",
+      "icon": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      "pages": [
+        {
+          "label": "Simple Plans",
+          "href": "/pages/pricing/pricing-simple.html"
+        },
+        {
+          "label": "Comparison",
+          "href": "/pages/pricing/pricing-comparison.html"
+        },
+        {
+          "label": "Billing Toggle",
+          "href": "/pages/pricing/pricing-toggle.html"
+        }
+      ]
+    },
+    {
+      "key": "workspace",
+      "label": "Workspace",
+      "icon": "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
+      "pages": [
+        {
+          "label": "General Settings",
+          "href": "/pages/workspace/workspace-general.html"
+        },
+        {
+          "label": "Team Members",
+          "href": "/pages/workspace/workspace-members.html"
+        },
+        {
+          "label": "Billing",
+          "href": "/pages/workspace/workspace-billing.html"
+        }
+      ]
+    },
+    {
+      "key": "states",
+      "label": "States",
+      "icon": "M20 12H4M12 4v16",
+      "pages": [
+        {
+          "label": "Empty States",
+          "href": "/pages/states/state-empty.html"
+        },
+        {
+          "label": "Loading States",
+          "href": "/pages/states/state-loading.html"
+        },
+        {
+          "label": "Error States",
+          "href": "/pages/states/state-error.html"
+        }
+      ]
+    },
+    {
+      "key": "calendar",
+      "label": "Calendar",
+      "icon": "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+      "pages": [
+        {
+          "label": "Month Calendar",
+          "href": "/pages/calendar/calendar-month.html"
+        },
+        {
+          "label": "Week Calendar",
+          "href": "/pages/calendar/calendar-week.html"
+        },
+        {
+          "label": "Timeline",
+          "href": "/pages/calendar/timeline.html"
+        }
+      ]
+    },
+    {
+      "key": "social",
+      "label": "Social",
+      "icon": "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z",
+      "pages": [
+        {
+          "label": "Social Feed",
+          "href": "/pages/social/feed.html"
+        },
+        {
+          "label": "Messages",
+          "href": "/pages/social/messages.html"
+        },
+        {
+          "label": "Notifications",
+          "href": "/pages/social/notifications.html"
+        }
+      ]
+    }
+  ]
+}

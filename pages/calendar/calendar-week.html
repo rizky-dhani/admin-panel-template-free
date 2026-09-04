@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+    <!-- @chrome:head title="Week Calendar — Admin Panel" favicon="📅" -->
+    <!-- @chrome:sidebar-open variant="light" -->
+
+    <div class="flex h-16 items-center justify-between px-6">
+        <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white"
+                >A</span
+            >
+            <span class="text-lg font-bold text-gray-900"
+                >Acme<span class="text-indigo-600">Admin</span></span
+            >
+        </a>
+        <button
+            id="sidebar-close"
+            class="text-gray-400 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <!-- @chrome:sidebar-nav variant="light" user-avatar="https://i.pravatar.cc/80?img=12" user-name="Alex Morgan" user-email="alex@acme.com" user-signedin="alex@acme.com" -->
+    <header
+        class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6"
+    >
+        <button
+            id="sidebar-toggle"
+            class="text-gray-500 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">Week Calendar</h1>
+        <div class="ml-auto flex items-center gap-3">
+            <button
+                data-theme-toggle
+                aria-label="Toggle theme"
+                class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="hidden h-5 w-5 dark:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                </svg>
+                <svg
+                    class="h-5 w-5 dark:hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                </svg>
+            </button>
+
+            <button
+                class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                </svg>
+            </button>
+            <img
+                class="h-9 w-9 rounded-full object-cover"
+                src="https://i.pravatar.cc/80?img=12"
+                alt="User"
+            />
+        </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+        <div class="mx-auto max-w-5xl">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-900">Week Calendar</h1>
+                <p class="text-sm text-gray-500">
+                    Day columns with timed and all-day events.
+                </p>
+            </div>
+
+            <!-- All-day -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">All-Day Events</h2>
+                <div class="overflow-x-auto">
+                    <div class="min-w-[720px]">
+                        <div
+                            class="grid grid-cols-7 divide-x divide-gray-200 rounded-t-lg border border-b-0 border-gray-200 bg-gray-50"
+                        >
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Mon
+                            </div>
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Tue
+                            </div>
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Wed
+                            </div>
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Thu
+                            </div>
+                            <div
+                                class="bg-indigo-50 px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-indigo-700"
+                            >
+                                Fri
+                            </div>
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Sat
+                            </div>
+                            <div
+                                class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                            >
+                                Sun
+                            </div>
+                        </div>
+                        <div
+                            class="grid grid-cols-7 divide-x divide-gray-200 rounded-b-lg border border-gray-200"
+                        >
+                            <div class="space-y-2 p-2">
+                                <span
+                                    class="block rounded bg-indigo-100 px-2 py-1 text-xs font-medium text-indigo-700"
+                                    >Product sync</span
+                                >
+                            </div>
+                            <div class="space-y-2 p-2">
+                                <span
+                                    class="block rounded bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700"
+                                    >Offsite</span
+                                >
+                            </div>
+                            <div class="space-y-2 p-2">
+                                <span
+                                    class="block rounded bg-violet-100 px-2 py-1 text-xs font-medium text-violet-700"
+                                    >Design review</span
+                                >
+                            </div>
+                            <div class="space-y-2 p-2">
+                                <span
+                                    class="block rounded bg-amber-100 px-2 py-1 text-xs font-medium text-amber-700"
+                                    >QA window</span
+                                >
+                            </div>
+                            <div class="space-y-2 p-2">
+                                <span
+                                    class="block rounded bg-rose-100 px-2 py-1 text-xs font-medium text-rose-700"
+                                    >Launch day</span
+                                >
+                            </div>
+                            <div class="space-y-2 p-2"></div>
+                            <div class="space-y-2 p-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time grid -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">Time Grid</h2>
+                <div class="overflow-x-auto">
+                    <div class="min-w-[720px]">
+                        <div class="flex">
+                            <div class="w-14 shrink-0"></div>
+                            <div
+                                class="grid flex-1 grid-cols-7 divide-x divide-gray-200"
+                            >
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Mon
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Tue
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Wed
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Thu
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-indigo-700"
+                                >
+                                    Fri
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Sat
+                                </div>
+                                <div
+                                    class="py-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500"
+                                >
+                                    Sun
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <!-- Time column -->
+                            <div
+                                class="w-14 shrink-0 border-t border-gray-200 text-right"
+                            >
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    9a
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    10a
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    11a
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    12p
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    1p
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    2p
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    3p
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    4p
+                                </div>
+                                <div
+                                    class="h-14 border-b border-gray-100 pr-2 text-[10px] leading-[14px] text-gray-400"
+                                >
+                                    5p
+                                </div>
+                            </div>
+                            <!-- Day columns -->
+                            <div
+                                class="grid flex-1 grid-cols-7 divide-x divide-gray-200"
+                            >
+                                <!-- Mon -->
+                                <div class="relative border-t border-gray-200">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                    <div
+                                        class="absolute left-1 right-1 top-0 rounded bg-indigo-600 px-2 py-1 text-xs font-medium text-white"
+                                    >
+                                        Team standup
+                                    </div>
+                                </div>
+                                <!-- Tue -->
+                                <div class="relative border-t border-gray-200">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                    <div
+                                        class="absolute left-1 right-1 top-0 h-28 rounded bg-emerald-500 px-2 py-1 text-xs font-medium text-white"
+                                    >
+                                        Client meeting
+                                    </div>
+                                </div>
+                                <!-- Wed -->
+                                <div class="relative border-t border-gray-200">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                    <div
+                                        class="absolute left-1 right-1 top-56 h-28 overflow-hidden rounded bg-violet-600 px-2 py-1 text-xs font-medium text-white"
+                                    >
+                                        Sprint planning
+                                    </div>
+                                </div>
+                                <!-- Thu -->
+                                <div class="relative border-t border-gray-200">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                    <div
+                                        class="absolute left-1 right-1 top-14 h-28 rounded bg-amber-500 px-2 py-1 text-xs font-medium text-white"
+                                    >
+                                        Design review
+                                    </div>
+                                </div>
+                                <!-- Fri -->
+                                <div
+                                    class="relative border-t border-gray-200 bg-indigo-50/30"
+                                >
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                    <div
+                                        class="absolute left-1 right-1 top-28 h-14 rounded bg-rose-500 px-2 py-1 text-xs font-medium text-white"
+                                    >
+                                        Release
+                                    </div>
+                                </div>
+                                <!-- Sat -->
+                                <div class="relative bg-gray-50/70">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                </div>
+                                <!-- Sun -->
+                                <div class="relative bg-gray-50/70">
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div
+                                        class="h-14 border-b border-gray-100"
+                                    ></div>
+                                    <div class="h-14"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agenda -->
+            <section
+                class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">Week Agenda</h2>
+                <div class="divide-y divide-gray-200">
+                    <div class="flex items-center gap-4 py-3">
+                        <div
+                            class="w-14 text-right text-sm font-medium text-gray-900"
+                        >
+                            09:30
+                        </div>
+                        <div
+                            class="h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"
+                        ></div>
+                        <p class="text-sm text-gray-900">Team standup</p>
+                        <span
+                            class="ml-auto rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-700"
+                            >Mon</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-4 py-3">
+                        <div
+                            class="w-14 text-right text-sm font-medium text-gray-900"
+                        >
+                            10:00
+                        </div>
+                        <div
+                            class="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"
+                        ></div>
+                        <p class="text-sm text-gray-900">
+                            Client meeting — Acme Corp
+                        </p>
+                        <span
+                            class="ml-auto rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700"
+                            >Tue</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-4 py-3">
+                        <div
+                            class="w-14 text-right text-sm font-medium text-gray-900"
+                        >
+                            14:00
+                        </div>
+                        <div
+                            class="h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500"
+                        ></div>
+                        <p class="text-sm text-gray-900">Sprint planning</p>
+                        <span
+                            class="ml-auto rounded-full bg-violet-50 px-2 py-0.5 text-xs font-medium text-violet-700"
+                            >Wed</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-4 py-3">
+                        <div
+                            class="w-14 text-right text-sm font-medium text-gray-900"
+                        >
+                            11:00
+                        </div>
+                        <div
+                            class="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"
+                        ></div>
+                        <p class="text-sm text-gray-900">Design review</p>
+                        <span
+                            class="ml-auto rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700"
+                            >Thu</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-4 py-3">
+                        <div
+                            class="w-14 text-right text-sm font-medium text-gray-900"
+                        >
+                            15:00
+                        </div>
+                        <div
+                            class="h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500"
+                        ></div>
+                        <p class="text-sm text-gray-900">v2.4 release</p>
+                        <span
+                            class="ml-auto rounded-full bg-rose-50 px-2 py-0.5 text-xs font-medium text-rose-700"
+                            >Fri</span
+                        >
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- @chrome:close -->
+</html>

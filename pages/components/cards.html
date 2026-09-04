@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+    <!-- @chrome:head title="Cards — Admin Panel" favicon="🖥️" -->
+    <!-- @chrome:sidebar-open variant="light" -->
+
+    <div class="flex h-16 items-center justify-between px-6">
+        <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white"
+                >A</span
+            >
+            <span class="text-lg font-bold text-gray-900"
+                >Acme<span class="text-indigo-600">Admin</span></span
+            >
+        </a>
+        <button
+            id="sidebar-close"
+            class="text-gray-400 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <!-- @chrome:sidebar-nav variant="light" user-avatar="https://i.pravatar.cc/80?img=12" user-name="Alex Morgan" user-email="alex@acme.com" user-signedin="alex@acme.com" -->
+    <header
+        class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6"
+    >
+        <button
+            id="sidebar-toggle"
+            class="text-gray-500 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">Cards</h1>
+        <div class="ml-auto flex items-center gap-3">
+            <button
+                data-theme-toggle
+                aria-label="Toggle theme"
+                class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="hidden h-5 w-5 dark:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                </svg>
+                <svg
+                    class="h-5 w-5 dark:hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                </svg>
+            </button>
+
+            <button
+                class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                </svg>
+            </button>
+            <img
+                class="h-9 w-9 rounded-full object-cover"
+                src="https://i.pravatar.cc/80?img=12"
+                alt="User"
+            />
+        </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+        <div class="mx-auto max-w-5xl">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-900">Cards</h1>
+                <p class="text-sm text-gray-500">
+                    Content card variations for dashboards.
+                </p>
+            </div>
+
+            <!-- Basic stats card -->
+            <h2 class="mb-3 font-semibold text-gray-900">Stat Cards</h2>
+            <div class="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600"
+                    >
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-gray-500">
+                        Total Revenue
+                    </p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">$48,290</p>
+                    <p class="mt-2 text-sm font-medium text-emerald-600">
+                        +18.2% vs last month
+                    </p>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600"
+                    >
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-gray-500">
+                        Active Users
+                    </p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">2,850</p>
+                    <p class="mt-2 text-sm font-medium text-emerald-600">
+                        +5.4% vs last month
+                    </p>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-600"
+                    >
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            />
+                        </svg>
+                    </div>
+                    <p class="mt-4 text-sm font-medium text-gray-500">
+                        Pending Actions
+                    </p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">143</p>
+                    <p class="mt-2 text-sm font-medium text-rose-600">
+                        12 require attention
+                    </p>
+                </div>
+            </div>
+
+            <!-- Team / profile cards -->
+            <h2 class="mb-3 font-semibold text-gray-900">Profile Cards</h2>
+            <div class="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="h-20 bg-gradient-to-r from-indigo-500 to-violet-500"
+                    ></div>
+                    <div class="-mt-10 px-6 pb-6 text-center">
+                        <img
+                            class="mx-auto h-20 w-20 rounded-full border-4 border-white object-cover"
+                            src="https://i.pravatar.cc/80?img=32"
+                            alt="Sara Chen"
+                        />
+                        <h3 class="mt-3 font-semibold text-gray-900">
+                            Sara Chen
+                        </h3>
+                        <p class="text-sm text-gray-500">Product Designer</p>
+                        <div class="mt-4 flex justify-center gap-2">
+                            <button
+                                class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                            >
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="h-20 bg-gradient-to-r from-emerald-500 to-teal-500"
+                    ></div>
+                    <div class="-mt-10 px-6 pb-6 text-center">
+                        <img
+                            class="mx-auto h-20 w-20 rounded-full border-4 border-white object-cover"
+                            src="https://i.pravatar.cc/80?img=15"
+                            alt="Liam Reyes"
+                        />
+                        <h3 class="mt-3 font-semibold text-gray-900">
+                            Liam Reyes
+                        </h3>
+                        <p class="text-sm text-gray-500">Backend Engineer</p>
+                        <div class="mt-4 flex justify-center gap-2">
+                            <button
+                                class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
+                            >
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200"
+                >
+                    <div
+                        class="h-20 bg-gradient-to-r from-amber-500 to-orange-500"
+                    ></div>
+                    <div class="-mt-10 px-6 pb-6 text-center">
+                        <img
+                            class="mx-auto h-20 w-20 rounded-full border-4 border-white object-cover"
+                            src="https://i.pravatar.cc/80?img=47"
+                            alt="Mia Patel"
+                        />
+                        <h3 class="mt-3 font-semibold text-gray-900">
+                            Mia Patel
+                        </h3>
+                        <p class="text-sm text-gray-500">Marketing Lead</p>
+                        <div class="mt-4 flex justify-center gap-2">
+                            <button
+                                class="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
+                            >
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gradient cards -->
+            <h2 class="mb-3 font-semibold text-gray-900">Gradient Cards</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-6 text-white shadow-lg"
+                >
+                    <p class="text-sm font-medium text-indigo-100">Pro Plan</p>
+                    <p class="mt-2 text-3xl font-bold">$99/mo</p>
+                    <ul class="mt-4 space-y-2 text-sm text-indigo-100">
+                        <li>Unlimited projects</li>
+                        <li>Priority support</li>
+                        <li>Advanced analytics</li>
+                    </ul>
+                    <button
+                        class="mt-6 w-full rounded-lg bg-white py-2.5 text-sm font-semibold text-indigo-700 hover:bg-indigo-50"
+                    >
+                        Upgrade
+                    </button>
+                </div>
+                <div
+                    class="rounded-xl bg-gradient-to-br from-emerald-600 to-teal-600 p-6 text-white shadow-lg"
+                >
+                    <p class="text-sm font-medium text-emerald-100">
+                        This Month
+                    </p>
+                    <p class="mt-2 text-3xl font-bold">87%</p>
+                    <p class="mt-1 text-sm text-emerald-100">Goal completion</p>
+                    <div class="mt-4 h-2 w-full rounded-full bg-white/25">
+                        <div class="h-2 w-[87%] rounded-full bg-white"></div>
+                    </div>
+                    <p class="mt-3 text-sm text-emerald-100">
+                        +12% from last month
+                    </p>
+                </div>
+                <div
+                    class="rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 p-6 text-white shadow-lg"
+                >
+                    <p class="text-sm font-medium text-gray-300">Storage</p>
+                    <p class="mt-2 text-3xl font-bold">62 GB</p>
+                    <p class="mt-1 text-sm text-gray-300">of 100 GB used</p>
+                    <div class="mt-4 h-2 w-full rounded-full bg-white/25">
+                        <div
+                            class="h-2 w-[62%] rounded-full bg-amber-400"
+                        ></div>
+                    </div>
+                    <button
+                        class="mt-6 w-full rounded-lg bg-white/10 py-2.5 text-sm font-semibold text-white hover:bg-white/20"
+                    >
+                        Manage Storage
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- @chrome:close -->
+</html>

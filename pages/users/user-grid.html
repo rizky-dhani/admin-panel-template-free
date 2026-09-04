@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+    <!-- @chrome:head title="User Grid — Admin Panel" favicon="👥" -->
+    <!-- @chrome:sidebar-open variant="light" -->
+
+    <div class="flex h-16 items-center justify-between px-6">
+        <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white"
+                >A</span
+            >
+            <span class="text-lg font-bold text-gray-900"
+                >Acme<span class="text-indigo-600">Admin</span></span
+            >
+        </a>
+        <button
+            id="sidebar-close"
+            class="text-gray-400 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <!-- @chrome:sidebar-nav variant="light" user-avatar="https://i.pravatar.cc/80?img=12" user-name="Alex Morgan" user-email="alex@acme.com" user-signedin="alex@acme.com" -->
+    <header
+        class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6"
+    >
+        <button
+            id="sidebar-toggle"
+            class="text-gray-500 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">User Grid</h1>
+        <div class="ml-auto flex items-center gap-3">
+            <button
+                data-theme-toggle
+                aria-label="Toggle theme"
+                class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="hidden h-5 w-5 dark:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                </svg>
+                <svg
+                    class="h-5 w-5 dark:hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                </svg>
+            </button>
+
+            <button
+                class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                </svg>
+            </button>
+            <img
+                class="h-9 w-9 rounded-full object-cover"
+                src="https://i.pravatar.cc/80?img=12"
+                alt="User"
+            />
+        </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+        <div class="mx-auto max-w-4xl">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-900">User Grid</h1>
+                <p class="text-sm text-gray-500">
+                    Browse team members as visual cards.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <div
+                    class="mb-4 flex flex-wrap items-center justify-between gap-3"
+                >
+                    <h2 class="font-semibold text-gray-900">Team</h2>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50"
+                        >
+                            Filter
+                        </button>
+                        <button
+                            class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                        >
+                            <svg
+                                class="h-4 w-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 4v16m8-8H4"
+                                />
+                            </svg>
+                            Invite
+                        </button>
+                    </div>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=2"
+                            alt="Elena Rossi"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Elena Rossi
+                        </p>
+                        <p class="text-xs text-gray-500">elena@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700"
+                            >Admin</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            <span class="text-xs font-medium text-emerald-700"
+                                >Active</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=6"
+                            alt="Omar Haddad"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Omar Haddad
+                        </p>
+                        <p class="text-xs text-gray-500">omar@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700"
+                            >Member</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            <span class="text-xs font-medium text-emerald-700"
+                                >Active</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=10"
+                            alt="Hana Suzuki"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Hana Suzuki
+                        </p>
+                        <p class="text-xs text-gray-500">hana@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700"
+                            >Editor</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-amber-500"
+                            ></span>
+                            <span class="text-xs font-medium text-amber-700"
+                                >Invited</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=16"
+                            alt="Diego Silva"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Diego Silva
+                        </p>
+                        <p class="text-xs text-gray-500">diego@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700"
+                            >Member</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-rose-500"
+                            ></span>
+                            <span class="text-xs font-medium text-rose-700"
+                                >Suspended</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=22"
+                            alt="Grace Liu"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Grace Liu
+                        </p>
+                        <p class="text-xs text-gray-500">grace@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700"
+                            >Admin</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            <span class="text-xs font-medium text-emerald-700"
+                                >Active</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-xl border border-gray-200 p-5 text-center"
+                    >
+                        <img
+                            class="mx-auto h-16 w-16 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=26"
+                            alt="Leo Martin"
+                        />
+                        <p class="mt-3 font-semibold text-gray-900">
+                            Leo Martin
+                        </p>
+                        <p class="text-xs text-gray-500">leo@acme.com</p>
+                        <span
+                            class="mt-2 inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700"
+                            >Member</span
+                        >
+                        <div
+                            class="mt-3 flex items-center justify-center gap-1.5"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            <span class="text-xs font-medium text-emerald-700"
+                                >Active</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compact -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">
+                    Compact Row Cards
+                </h2>
+                <div class="space-y-3">
+                    <div
+                        class="flex items-center gap-3 rounded-xl border border-gray-200 p-3"
+                    >
+                        <img
+                            class="h-10 w-10 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=3"
+                            alt="Nina Petrova"
+                        />
+                        <div class="min-w-0 flex-1">
+                            <p
+                                class="truncate text-sm font-medium text-gray-900"
+                            >
+                                Nina Petrova
+                            </p>
+                            <p class="truncate text-xs text-gray-500">
+                                nina@acme.com
+                            </p>
+                        </div>
+                        <span
+                            class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700"
+                            >Member</span
+                        >
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            Active
+                        </span>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 rounded-xl border border-gray-200 p-3"
+                    >
+                        <img
+                            class="h-10 w-10 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=7"
+                            alt="Tom Becker"
+                        />
+                        <div class="min-w-0 flex-1">
+                            <p
+                                class="truncate text-sm font-medium text-gray-900"
+                            >
+                                Tom Becker
+                            </p>
+                            <p class="truncate text-xs text-gray-500">
+                                tom@acme.com
+                            </p>
+                        </div>
+                        <span
+                            class="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700"
+                            >Admin</span
+                        >
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                            ></span>
+                            Active
+                        </span>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 rounded-xl border border-gray-200 p-3"
+                    >
+                        <img
+                            class="h-10 w-10 rounded-full object-cover"
+                            src="https://i.pravatar.cc/80?img=11"
+                            alt="Zara Ahmed"
+                        />
+                        <div class="min-w-0 flex-1">
+                            <p
+                                class="truncate text-sm font-medium text-gray-900"
+                            >
+                                Zara Ahmed
+                            </p>
+                            <p class="truncate text-xs text-gray-500">
+                                zara@acme.com
+                            </p>
+                        </div>
+                        <span
+                            class="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700"
+                            >Editor</span
+                        >
+                        <span
+                            class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700"
+                        >
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-amber-500"
+                            ></span>
+                            Invited
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- @chrome:close -->
+</html>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+    <!-- @chrome:head title="Loading States — Admin Panel" favicon="⏳" -->
+    <!-- @chrome:sidebar-open variant="light" -->
+
+    <div class="flex h-16 items-center justify-between px-6">
+        <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white"
+                >A</span
+            >
+            <span class="text-lg font-bold text-gray-900"
+                >Acme<span class="text-indigo-600">Admin</span></span
+            >
+        </a>
+        <button
+            id="sidebar-close"
+            class="text-gray-400 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <!-- @chrome:sidebar-nav variant="light" user-avatar="https://i.pravatar.cc/80?img=12" user-name="Alex Morgan" user-email="alex@acme.com" user-signedin="alex@acme.com" -->
+    <header
+        class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6"
+    >
+        <button
+            id="sidebar-toggle"
+            class="text-gray-500 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">Loading States</h1>
+        <div class="ml-auto flex items-center gap-3">
+            <button
+                data-theme-toggle
+                aria-label="Toggle theme"
+                class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="hidden h-5 w-5 dark:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                </svg>
+                <svg
+                    class="h-5 w-5 dark:hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                </svg>
+            </button>
+
+            <button
+                class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                </svg>
+            </button>
+            <img
+                class="h-9 w-9 rounded-full object-cover"
+                src="https://i.pravatar.cc/80?img=12"
+                alt="User"
+            />
+        </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+        <div class="mx-auto max-w-4xl">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-900">Loading States</h1>
+                <p class="text-sm text-gray-500">
+                    Skeletons, spinners and progress bars that keep the UI
+                    feeling fast.
+                </p>
+            </div>
+
+            <!-- Skeleton cards -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">Skeleton Cards</h2>
+                <div class="grid gap-4 sm:grid-cols-3">
+                    <div class="rounded-lg border border-gray-200 p-4">
+                        <div
+                            class="h-8 w-8 animate-pulse rounded-lg bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-4 h-4 w-3/4 animate-pulse rounded bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-2 h-3 w-1/2 animate-pulse rounded bg-gray-100"
+                        ></div>
+                        <div
+                            class="mt-4 h-8 w-full animate-pulse rounded-lg bg-gray-100"
+                        ></div>
+                    </div>
+                    <div class="rounded-lg border border-gray-200 p-4">
+                        <div
+                            class="h-8 w-8 animate-pulse rounded-lg bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-4 h-4 w-2/3 animate-pulse rounded bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-2 h-3 w-1/3 animate-pulse rounded bg-gray-100"
+                        ></div>
+                        <div
+                            class="mt-4 h-8 w-full animate-pulse rounded-lg bg-gray-100"
+                        ></div>
+                    </div>
+                    <div class="rounded-lg border border-gray-200 p-4">
+                        <div
+                            class="h-8 w-8 animate-pulse rounded-lg bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-4 h-4 w-1/2 animate-pulse rounded bg-gray-200"
+                        ></div>
+                        <div
+                            class="mt-2 h-3 w-2/3 animate-pulse rounded bg-gray-100"
+                        ></div>
+                        <div
+                            class="mt-4 h-8 w-full animate-pulse rounded-lg bg-gray-100"
+                        ></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skeleton table -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">
+                    Skeleton Table Rows
+                </h2>
+                <div class="space-y-3">
+                    <div
+                        class="flex items-center gap-4 rounded-lg border border-gray-200 p-3"
+                    >
+                        <div
+                            class="h-9 w-9 animate-pulse rounded-full bg-gray-200"
+                        ></div>
+                        <div class="flex-1 space-y-2">
+                            <div
+                                class="h-3 w-1/3 animate-pulse rounded bg-gray-200"
+                            ></div>
+                            <div
+                                class="h-3 w-1/4 animate-pulse rounded bg-gray-100"
+                            ></div>
+                        </div>
+                        <div
+                            class="h-6 w-16 animate-pulse rounded-full bg-gray-100"
+                        ></div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 rounded-lg border border-gray-200 p-3"
+                    >
+                        <div
+                            class="h-9 w-9 animate-pulse rounded-full bg-gray-200"
+                        ></div>
+                        <div class="flex-1 space-y-2">
+                            <div
+                                class="h-3 w-1/2 animate-pulse rounded bg-gray-200"
+                            ></div>
+                            <div
+                                class="h-3 w-1/3 animate-pulse rounded bg-gray-100"
+                            ></div>
+                        </div>
+                        <div
+                            class="h-6 w-16 animate-pulse rounded-full bg-gray-100"
+                        ></div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 rounded-lg border border-gray-200 p-3"
+                    >
+                        <div
+                            class="h-9 w-9 animate-pulse rounded-full bg-gray-200"
+                        ></div>
+                        <div class="flex-1 space-y-2">
+                            <div
+                                class="h-3 w-2/3 animate-pulse rounded bg-gray-200"
+                            ></div>
+                            <div
+                                class="h-3 w-1/2 animate-pulse rounded bg-gray-100"
+                            ></div>
+                        </div>
+                        <div
+                            class="h-6 w-16 animate-pulse rounded-full bg-gray-100"
+                        ></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spinner -->
+            <section
+                class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">Spinners</h2>
+                <div class="flex flex-wrap items-center gap-6">
+                    <div class="flex flex-col items-center gap-2">
+                        <svg
+                            class="h-8 w-8 animate-spin text-indigo-600"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            ></circle>
+                            <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                            ></path>
+                        </svg>
+                        <span class="text-xs text-gray-500">Loading</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <svg
+                            class="h-8 w-8 animate-spin text-gray-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            ></circle>
+                            <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                            ></path>
+                        </svg>
+                        <span class="text-xs text-gray-500">Syncing</span>
+                    </div>
+                    <button
+                        class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white opacity-70"
+                    >
+                        <svg
+                            class="h-4 w-4 animate-spin"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                class="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                stroke-width="4"
+                            ></circle>
+                            <path
+                                class="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                            ></path>
+                        </svg>
+                        Saving...
+                    </button>
+                </div>
+            </section>
+
+            <!-- Progress bar -->
+            <section
+                class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+                <h2 class="mb-4 font-semibold text-gray-900">Progress Bar</h2>
+                <div class="space-y-4">
+                    <div>
+                        <div
+                            class="mb-1.5 flex items-center justify-between text-sm"
+                        >
+                            <span class="font-medium text-gray-700"
+                                >Uploading report.pdf</span
+                            >
+                            <span class="text-gray-500">64%</span>
+                        </div>
+                        <div
+                            class="h-2 w-full overflow-hidden rounded-full bg-gray-100"
+                        >
+                            <div
+                                class="h-full w-2/3 rounded-full bg-indigo-600"
+                            ></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            class="mb-1.5 flex items-center justify-between text-sm"
+                        >
+                            <span class="font-medium text-gray-700"
+                                >Processing images</span
+                            >
+                            <span class="text-gray-500">100%</span>
+                        </div>
+                        <div
+                            class="h-2 w-full overflow-hidden rounded-full bg-gray-100"
+                        >
+                            <div
+                                class="h-full w-full rounded-full bg-emerald-500"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- @chrome:close -->
+</html>

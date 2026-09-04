@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+    <!-- @chrome:head title="User Profile — Admin Panel" favicon="🖥️" -->
+    <!-- @chrome:sidebar-open variant="light" -->
+
+    <div class="flex h-16 items-center justify-between px-6">
+        <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+                class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white"
+                >A</span
+            >
+            <span class="text-lg font-bold text-gray-900"
+                >Acme<span class="text-indigo-600">Admin</span></span
+            >
+        </a>
+        <button
+            id="sidebar-close"
+            class="text-gray-400 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
+
+    <!-- @chrome:sidebar-nav variant="light" user-avatar="https://i.pravatar.cc/80?img=12" user-name="Alex Morgan" user-email="alex@acme.com" user-signedin="alex@acme.com" -->
+    <header
+        class="sticky top-0 z-20 flex h-16 items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6"
+    >
+        <button
+            id="sidebar-toggle"
+            class="text-gray-500 hover:text-gray-900 lg:hidden"
+        >
+            <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">User Profile</h1>
+        <div class="ml-auto flex items-center gap-3">
+            <button
+                data-theme-toggle
+                aria-label="Toggle theme"
+                class="relative rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="hidden h-5 w-5 dark:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                </svg>
+                <svg
+                    class="h-5 w-5 dark:hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                </svg>
+            </button>
+
+            <button
+                class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+                <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                </svg>
+            </button>
+            <img
+                class="h-9 w-9 rounded-full object-cover"
+                src="https://i.pravatar.cc/80?img=12"
+                alt="User"
+            />
+        </div>
+    </header>
+
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
+        <div class="mx-auto max-w-5xl">
+            <!-- Cover + avatar -->
+            <div
+                class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200"
+            >
+                <div
+                    class="h-40 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500"
+                ></div>
+                <div class="px-6 pb-6">
+                    <div
+                        class="-mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between"
+                    >
+                        <div class="flex items-end gap-4">
+                            <img
+                                class="h-24 w-24 rounded-full border-4 border-white object-cover shadow"
+                                src="https://i.pravatar.cc/120?img=12"
+                                alt="Alex Morgan"
+                            />
+                            <div class="pb-1">
+                                <h1 class="text-xl font-bold text-gray-900">
+                                    Alex Morgan
+                                </h1>
+                                <p class="text-sm text-gray-500">
+                                    Product Manager · San Francisco
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 pb-1">
+                            <button
+                                class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                            >
+                                Message
+                            </button>
+                            <button
+                                class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                            >
+                                Edit Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+                    class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-200"
+                >
+                    <p class="text-sm font-medium text-gray-500">Projects</p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">24</p>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-200"
+                >
+                    <p class="text-sm font-medium text-gray-500">Followers</p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">1,204</p>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-200"
+                >
+                    <p class="text-sm font-medium text-gray-500">Following</p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">342</p>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-200"
+                >
+                    <p class="text-sm font-medium text-gray-500">Rating</p>
+                    <p class="mt-1 text-2xl font-bold text-gray-900">4.9</p>
+                </div>
+            </div>
+
+            <!-- About + activity -->
+            <div class="mt-6 grid gap-6 lg:grid-cols-3">
+                <div
+                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200 lg:col-span-2"
+                >
+                    <h2 class="mb-4 font-semibold text-gray-900">About</h2>
+                    <p class="text-sm leading-relaxed text-gray-600">
+                        Alex is a product manager focused on building delightful
+                        developer tools. With over 8 years of experience, they
+                        lead cross-functional teams from discovery to launch.
+                    </p>
+                    <div class="mt-5 space-y-3 text-sm">
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="h-4 w-4 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                            </svg>
+                            San Francisco, CA
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="h-4 w-4 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                />
+                            </svg>
+                            alex@acme.com
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="h-4 w-4 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h.5a2 2 0 011.6.8l1.2 1.6a2 2 0 01.2 2.2l-.6 1a14 14 0 005.5 5.5l1-.6a2 2 0 012.2.2l1.6 1.2a2 2 0 01.8 1.6V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z"
+                                />
+                            </svg>
+                            +1 (555) 010-2030
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200"
+                >
+                    <h2 class="mb-4 font-semibold text-gray-900">
+                        Recent Activity
+                    </h2>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <span
+                                class="mt-1 h-2 w-2 shrink-0 rounded-full bg-indigo-500"
+                            ></span>
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Updated project
+                                    <span class="font-medium">"Nova"</span>
+                                </p>
+                                <p class="text-xs text-gray-400">2 hrs ago</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <span
+                                class="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-500"
+                            ></span>
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Joined team
+                                    <span class="font-medium">Design</span>
+                                </p>
+                                <p class="text-xs text-gray-400">Yesterday</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <span
+                                class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-500"
+                            ></span>
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Completed sprint review
+                                </p>
+                                <p class="text-xs text-gray-400">3 days ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- @chrome:close -->
+</html>

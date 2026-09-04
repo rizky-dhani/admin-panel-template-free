@@ -1,0 +1,666 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    /* Brand - indigo primary */
+    --color-brand-50:  #eef2ff;
+    --color-brand-100: #e0e7ff;
+    --color-brand-200: #c7d2fe;
+    --color-brand-300: #a5b4fc;
+    --color-brand-400: #818cf8;
+    --color-brand-500: #6366f1;
+    --color-brand-600: #4f46e5;
+    --color-brand-700: #4338ca;
+    --color-brand-800: #3730a3;
+    --color-brand-900: #312e81;
+    --color-brand-950: #1e1b4b;
+
+    /* Grays (warm) */
+    --color-surface: #ffffff;
+    --color-canvas: #f8fafc;
+}
+
+/* Collapsible sidebar (toggled by #sidebar-collapse) */
+#sidebar {
+    transition: transform 0.2s ease, width 0.2s ease;
+}
+#sidebar.collapsed {
+    width: 5rem; /* w-20 */
+}
+#sidebar.collapsed .brand-text,
+#sidebar.collapsed .nav-label,
+#sidebar.collapsed .section-label,
+#sidebar.collapsed .user-info,
+#sidebar.collapsed .nav-badge {
+    display: none;
+}
+#sidebar.collapsed .brand {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+#sidebar.collapsed nav a {
+    justify-content: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+/* Dropdown section headers in collapsed mode: icon-only, no chevron,
+   no submenu. The Gallery Home anchor is already handled by nav a. */
+#sidebar.collapsed nav button[data-collapse] {
+    justify-content: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    gap: 0.5rem;
+}
+#sidebar.collapsed nav button[data-collapse] [data-chevron],
+#sidebar.collapsed nav [data-collapse-target] {
+    display: none;
+}
+#sidebar.collapsed nav .space-y-1 {
+    width: 100%;
+}
+#sidebar.collapsed .user-box {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ============================================================
+   Dark mode
+   Toggled by adding .dark to <html> (see app.js + head script).
+   The sidebar is always dark, so overrides target the topbar
+   (header) and content (main) only, plus standalone auth/error
+   pages that have no sidebar.
+   ============================================================ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --dark-canvas: #0b1120;
+    --dark-surface: #111827;
+    --dark-surface-2: #1f2937;
+    --dark-border: #1f2937;
+    --dark-border-2: #374151;
+    --dark-text: #f3f4f6;
+    --dark-text-2: #d1d5db;
+    --dark-muted: #9ca3af;
+    --dark-faint: #6b7280;
+}
+
+/* --- Topbar (header) --- */
+.dark header {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
+}
+.dark header input {
+    background-color: var(--dark-surface-2);
+    border-color: var(--dark-border-2);
+    color: var(--dark-text);
+}
+.dark header input::placeholder {
+    color: var(--dark-faint);
+}
+.dark header input:focus {
+    background-color: var(--dark-surface);
+}
+.dark header [data-dropdown] {
+    color: var(--dark-muted);
+}
+.dark header [data-dropdown]:hover {
+    background-color: var(--dark-surface-2);
+    color: var(--dark-text);
+}
+.dark header [data-theme-toggle] {
+    color: var(--dark-muted);
+}
+.dark header [data-theme-toggle]:hover {
+    background-color: var(--dark-surface-2);
+    color: var(--dark-text);
+}
+.dark header .h-6.w-px {
+    background-color: var(--dark-border);
+}
+
+/* --- Dropdown panels (bell / profile / theme) --- */
+.dark [id$="-menu"],
+.dark [id="bell-menu"],
+.dark [id="profile-menu"],
+.dark [id="theme-menu"] {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
+}
+.dark [id$="-menu"] a,
+.dark [id$="-menu"] button {
+    color: var(--dark-text-2);
+}
+.dark [id$="-menu"] .text-gray-900 {
+    color: var(--dark-text);
+}
+.dark [id$="-menu"] .text-gray-800 {
+    color: var(--dark-text);
+}
+.dark [id$="-menu"] .text-gray-700,
+.dark [id$="-menu"] .text-gray-600,
+.dark [id$="-menu"] .text-gray-500 {
+    color: var(--dark-text-2);
+}
+.dark [id$="-menu"] .text-gray-400,
+.dark [id$="-menu"] .text-gray-300 {
+    color: var(--dark-faint);
+}
+.dark [id$="-menu"] a:hover,
+.dark [id$="-menu"] button:hover {
+    background-color: var(--dark-surface-2);
+}
+.dark [id$="-menu"] p {
+    color: var(--dark-text);
+}
+.dark [id$="-menu"] .h-px {
+    background-color: var(--dark-border);
+}
+
+/* --- Content (main) --- */
+.dark main {
+    color: var(--dark-text);
+}
+.dark main .bg-white {
+    background-color: var(--dark-surface);
+}
+.dark main .bg-gray-50 {
+    background-color: var(--dark-surface-2);
+}
+.dark main .bg-gray-100 {
+    background-color: var(--dark-surface-2);
+}
+.dark main .bg-gray-200 {
+    background-color: var(--dark-border-2);
+}
+.dark main .ring-gray-200 {
+    --tw-ring-color: var(--dark-border);
+}
+.dark main .border-gray-200 {
+    border-color: var(--dark-border);
+}
+.dark main .border-gray-300 {
+    border-color: var(--dark-border-2);
+}
+.dark main .border-gray-100 {
+    border-color: var(--dark-border);
+}
+.dark main .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--dark-border);
+}
+.dark main .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--dark-border);
+}
+
+/* Text */
+.dark main .text-gray-900 {
+    color: var(--dark-text);
+}
+.dark main .text-gray-800 {
+    color: var(--dark-text);
+}
+.dark main .text-gray-700 {
+    color: var(--dark-text-2);
+}
+.dark main .text-gray-600 {
+    color: var(--dark-muted);
+}
+.dark main .text-gray-500 {
+    color: var(--dark-muted);
+}
+.dark main .text-gray-400 {
+    color: var(--dark-faint);
+}
+.dark main .text-gray-300 {
+    color: var(--dark-faint);
+}
+
+/* Hover states */
+.dark main .hover\:bg-gray-50:hover {
+    background-color: var(--dark-surface-2);
+}
+.dark main .hover\:bg-gray-100:hover {
+    background-color: var(--dark-surface-2);
+}
+.dark main .hover\:bg-gray-200:hover {
+    background-color: var(--dark-border-2);
+}
+.dark main .hover\:text-gray-900:hover {
+    color: var(--dark-text);
+}
+.dark main .hover\:text-gray-700:hover {
+    color: var(--dark-text-2);
+}
+.dark main .hover\:text-gray-600:hover {
+    color: var(--dark-muted);
+}
+
+/* Inputs / selects / textareas in content */
+.dark main input,
+.dark main select,
+.dark main textarea {
+    background-color: var(--dark-surface-2);
+    border-color: var(--dark-border-2);
+    color: var(--dark-text);
+}
+.dark main input::placeholder,
+.dark main textarea::placeholder {
+    color: var(--dark-faint);
+}
+.dark main input:focus,
+.dark main select:focus,
+.dark main textarea:focus {
+    background-color: var(--dark-surface);
+}
+
+/* Soft accent tints (bg-*-50/100) -> darker equivalents */
+.dark main .bg-indigo-50 {
+    background-color: rgba(99, 102, 241, 0.15);
+}
+.dark main .bg-indigo-100 {
+    background-color: rgba(99, 102, 241, 0.25);
+}
+.dark main .bg-emerald-50 {
+    background-color: rgba(16, 185, 129, 0.15);
+}
+.dark main .bg-emerald-100 {
+    background-color: rgba(16, 185, 129, 0.25);
+}
+.dark main .bg-rose-50 {
+    background-color: rgba(244, 63, 94, 0.15);
+}
+.dark main .bg-rose-100 {
+    background-color: rgba(244, 63, 94, 0.25);
+}
+.dark main .bg-red-50 {
+    background-color: rgba(239, 68, 68, 0.15);
+}
+.dark main .bg-amber-50 {
+    background-color: rgba(245, 158, 11, 0.15);
+}
+.dark main .bg-amber-100 {
+    background-color: rgba(245, 158, 11, 0.25);
+}
+.dark main .bg-violet-50 {
+    background-color: rgba(139, 92, 246, 0.15);
+}
+.dark main .bg-violet-100 {
+    background-color: rgba(139, 92, 246, 0.25);
+}
+.dark main .bg-blue-50 {
+    background-color: rgba(59, 130, 246, 0.15);
+}
+.dark main .bg-teal-50 {
+    background-color: rgba(20, 184, 166, 0.15);
+}
+.dark main .bg-sky-50 {
+    background-color: rgba(14, 165, 233, 0.15);
+}
+.dark main .bg-pink-50 {
+    background-color: rgba(236, 72, 153, 0.15);
+}
+.dark main .bg-purple-50 {
+    background-color: rgba(168, 85, 247, 0.15);
+}
+.dark main .bg-orange-50 {
+    background-color: rgba(249, 115, 22, 0.15);
+}
+.dark main .bg-yellow-50 {
+    background-color: rgba(234, 179, 8, 0.15);
+}
+.dark main .bg-green-50 {
+    background-color: rgba(34, 197, 94, 0.15);
+}
+.dark main .bg-cyan-50 {
+    background-color: rgba(6, 182, 212, 0.15);
+}
+
+/* Accent text on soft tints stays readable */
+.dark main .text-indigo-600,
+.dark main .text-indigo-700 {
+    color: #a5b4fc;
+}
+.dark main .text-emerald-600,
+.dark main .text-emerald-700 {
+    color: #6ee7b7;
+}
+.dark main .text-rose-600,
+.dark main .text-rose-700 {
+    color: #fda4af;
+}
+.dark main .text-red-600,
+.dark main .text-red-700 {
+    color: #fca5a5;
+}
+.dark main .text-amber-600,
+.dark main .text-amber-700 {
+    color: #fcd34d;
+}
+/* Deeper tint text (alert headings/bodies) must stay readable on the
+   translucent dark tint behind it. */
+.dark main .text-amber-800,
+.dark main .text-amber-900 {
+    color: #fcd34d;
+}
+.dark main .text-rose-800,
+.dark main .text-rose-900 {
+    color: #fda4af;
+}
+.dark main .text-emerald-800,
+.dark main .text-emerald-900 {
+    color: #6ee7b7;
+}
+.dark main .text-red-800,
+.dark main .text-red-900 {
+    color: #fca5a5;
+}
+.dark main .border-amber-200 {
+    border-color: rgba(245, 158, 11, 0.35);
+}
+/* Tinted pills/chips (bg-white + ring-*-200 on soft-tint alert cards):
+   keep the chip surface distinct from the card and give the ring a
+   matching muted tint instead of the bright 200-level color. */
+.dark main .ring-amber-200 {
+    --tw-ring-color: rgba(245, 158, 11, 0.4);
+}
+.dark main .ring-rose-200 {
+    --tw-ring-color: rgba(244, 63, 94, 0.4);
+}
+.dark main .ring-emerald-200 {
+    --tw-ring-color: rgba(16, 185, 129, 0.4);
+}
+.dark main .ring-rose-200 {
+    --tw-ring-color: rgba(244, 63, 94, 0.4);
+}
+.dark main .ring-emerald-200 {
+    --tw-ring-color: rgba(16, 185, 129, 0.4);
+}
+.dark main .border-rose-200 {
+    border-color: rgba(244, 63, 94, 0.35);
+}
+.dark main .border-emerald-200 {
+    border-color: rgba(16, 185, 129, 0.35);
+}
+.dark main .text-violet-600,
+.dark main .text-violet-700 {
+    color: #c4b5fd;
+}
+.dark main .text-blue-600,
+.dark main .text-blue-700 {
+    color: #93c5fd;
+}
+.dark main .text-teal-600 {
+    color: #5eead4;
+}
+.dark main .text-sky-600 {
+    color: #7dd3fc;
+}
+.dark main .text-pink-600 {
+    color: #f9a8d4;
+}
+.dark main .text-purple-600 {
+    color: #d8b4fe;
+}
+.dark main .text-orange-600 {
+    color: #fdba74;
+}
+.dark main .text-yellow-600 {
+    color: #fde047;
+}
+.dark main .text-green-600 {
+    color: #86efac;
+}
+.dark main .text-cyan-600 {
+    color: #67e8f9;
+}
+
+/* Body canvas for standalone pages (auth/error) and layout pages */
+.dark body {
+    background-color: var(--dark-canvas);
+    color: var(--dark-text);
+}
+
+/* Standalone auth/error pages (no sidebar/main) */
+.dark body:not(:has(#sidebar)) .bg-white {
+    background-color: var(--dark-surface);
+}
+.dark body:not(:has(#sidebar)) .ring-gray-200 {
+    --tw-ring-color: var(--dark-border);
+}
+.dark body:not(:has(#sidebar)) .border-gray-300 {
+    border-color: var(--dark-border-2);
+}
+.dark body:not(:has(#sidebar)) .text-gray-900 {
+    color: var(--dark-text);
+}
+.dark body:not(:has(#sidebar)) .text-gray-700 {
+    color: var(--dark-text-2);
+}
+.dark body:not(:has(#sidebar)) .text-gray-500 {
+    color: var(--dark-muted);
+}
+.dark body:not(:has(#sidebar)) .text-gray-400 {
+    color: var(--dark-faint);
+}
+.dark body:not(:has(#sidebar)) input {
+    background-color: var(--dark-surface-2);
+    border-color: var(--dark-border-2);
+    color: var(--dark-text);
+}
+.dark body:not(:has(#sidebar)) .hover\:bg-gray-50:hover {
+    background-color: var(--dark-surface-2);
+}
+
+/* --- Light-sidebar variant: flip it to dark in dark mode --- */
+/* The always-dark sidebar is bg-gray-900 and needs no change; the light
+   variant uses bg-white. Key off the bg-white/bg-gray-50 body too. */
+.dark #sidebar.bg-white {
+    background-color: var(--dark-surface);
+    border-color: var(--dark-border);
+}
+.dark #sidebar.bg-white > div {
+    border-color: var(--dark-border);
+}
+.dark #sidebar.bg-white .text-gray-900 {
+    color: var(--dark-text);
+}
+.dark #sidebar.bg-white .text-gray-600,
+.dark #sidebar.bg-white .text-gray-500 {
+    color: var(--dark-text-2);
+}
+.dark #sidebar.bg-white .text-gray-400 {
+    color: var(--dark-muted);
+}
+.dark #sidebar.bg-white .hover\:bg-gray-50:hover {
+    background-color: var(--dark-surface-2);
+}
+.dark #sidebar.bg-white .hover\:text-gray-900:hover {
+    color: var(--dark-text);
+}
+.dark #sidebar.bg-white .bg-gray-50 {
+    background-color: var(--dark-surface-2);
+}
+/* Nav count badges on light sidebars keep bg-gray-100 in the markup;
+   remap them to the same dark surface the always-dark sidebar uses so
+   the count pill doesn't stay light-on-dark in dark mode. */
+.dark #sidebar.bg-white .nav-badge.bg-gray-100 {
+    background-color: var(--dark-surface-2);
+}
+.dark #sidebar.bg-white .bg-indigo-50 {
+    background-color: rgba(99, 102, 241, 0.15);
+}
+.dark #sidebar.bg-white .bg-indigo-100 {
+    background-color: rgba(99, 102, 241, 0.25);
+}
+.dark #sidebar.bg-white .text-indigo-600,
+.dark #sidebar.bg-white .text-indigo-700 {
+    color: #a5b4fc;
+}
+.dark #sidebar.bg-white .divide-gray-100 > :not([hidden]) ~ :not([hidden]),
+.dark #sidebar.bg-white .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--dark-border);
+}
+.dark #sidebar.bg-white .hover\:bg-gray-100:hover {
+    background-color: var(--dark-surface-2);
+}
+
+/* --- Always-dark sidebar: follow the theme toggle ---
+   The bg-gray-900 markup is used on the default pages. In light mode
+   render it as a light sidebar; in dark mode the native dark markup
+   is already correct, so no .dark overrides are needed here. */
+html:not(.dark) #sidebar.bg-gray-900 {
+    background-color: #ffffff;
+    border-right: 1px solid var(--color-gray-200);
+}
+html:not(.dark) #sidebar.bg-gray-900 .border-gray-800 {
+    border-color: var(--color-gray-200);
+}
+html:not(.dark) #sidebar.bg-gray-900 .bg-gray-800 {
+    background-color: var(--color-gray-100);
+}
+html:not(.dark) #sidebar.bg-gray-900
+    .text-white:not(.bg-indigo-600):not(.bg-indigo-500) {
+    color: var(--color-gray-900);
+}
+html:not(.dark) #sidebar.bg-gray-900 .text-gray-300 {
+    color: var(--color-gray-600);
+}
+html:not(.dark) #sidebar.bg-gray-900 .text-gray-400 {
+    color: var(--color-gray-500);
+}
+html:not(.dark) #sidebar.bg-gray-900 .text-gray-500 {
+    color: var(--color-gray-400);
+}
+html:not(.dark) #sidebar.bg-gray-900 .text-indigo-400 {
+    color: var(--color-indigo-600);
+}
+html:not(.dark) #sidebar.bg-gray-900 .hover\:bg-gray-800:hover {
+    background-color: var(--color-gray-50);
+}
+html:not(.dark) #sidebar.bg-gray-900 .hover\:text-white:hover {
+    color: var(--color-gray-900);
+}
+html:not(.dark) #sidebar.bg-gray-900 .bg-gray-800 .text-gray-400 {
+    color: var(--color-gray-500);
+}
+
+/* ============================================================
+   Pretty scrollbars
+   Thin, rounded, theme-aware thumb with a soft hover state.
+   Works in WebKit/Blink, Firefox, and Chromium (overlay-thin).
+   ============================================================ */
+:root {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--color-gray-300) transparent;
+}
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gray-300) transparent;
+}
+
+/* WebKit / Blink track & thumb */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: color-mix(
+        in srgb,
+        var(--color-gray-400) 45%,
+        transparent
+    );
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: color-mix(
+        in srgb,
+        var(--color-gray-500) 70%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Chromium adaptive overlay scrollbars */
+@supports (scrollbar-width: thin) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-gray-300) transparent;
+    }
+    *:hover,
+    *:focus,
+    *:focus-within {
+        scrollbar-color: var(--color-gray-300) transparent;
+    }
+}
+
+/* Dark mode: softer, cooler thumb */
+.dark,
+.dark * {
+    scrollbar-color: var(--color-gray-600) transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: color-mix(
+        in srgb,
+        var(--color-gray-500) 55%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(
+        in srgb,
+        var(--color-gray-400) 70%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* The dark (nav) sidebar keeps a subtle indigo-tinted thumb so the
+   scrollbar reads as part of the brand surface in both themes. */
+#sidebar.bg-gray-900 {
+    scrollbar-color: var(--color-gray-600) transparent;
+}
+html:not(.dark) #sidebar.bg-gray-900 {
+    scrollbar-color: var(--color-gray-300) transparent;
+}
+#sidebar.bg-gray-900::-webkit-scrollbar-thumb {
+    background: color-mix(
+        in srgb,
+        var(--color-indigo-400) 35%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+#sidebar.bg-gray-900::-webkit-scrollbar-thumb:hover {
+    background: color-mix(
+        in srgb,
+        var(--color-indigo-300) 60%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+html:not(.dark) #sidebar.bg-gray-900::-webkit-scrollbar-thumb {
+    background: color-mix(
+        in srgb,
+        var(--color-gray-400) 45%,
+        transparent
+    );
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
