@@ -1,6 +1,8 @@
-# Admin Panel Template
+# Admin Panel Template (Free)
 
 A collection of hand-built admin panel pages using **pure HTML + Tailwind CSS v4**. No framework — just clean, copy-pasteable markup so you can pick variations you like.
+
+This is the **free** edition — one page per section, MIT-clean, dependency-free. The **PRO** edition (private) adds every variant, the Workspace & Social sections, and premium widgets (ApexCharts, rich-text editor, file upload, drag-sort, vector map).
 
 All demo components are **interactive** and driven by one shared script (`src/js/app.js`) via data attributes — toggle switches, billing toggles, tabs, collapsible nav groups, topbar/dropdown menus, table search & filter, toast dismiss buttons, and pagination.
 

@@ -104,7 +104,7 @@ const SHELL = {
       `                            >Profile</a\n` +
       `                        >\n` +
       `                        <a\n` +
-      `                            href="/pages/profile/settings.html"\n` +
+      `                            href="/pages/profile/profile.html"\n` +
       `                            class="block rounded-lg px-3 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"\n` +
       `                            >Settings</a\n` +
       `                        >\n` +
@@ -188,7 +188,7 @@ const SHELL = {
       `                            >Profile</a\n` +
       `                        >\n` +
       `                        <a\n` +
-      `                            href="/pages/profile/settings.html"\n` +
+      `                            href="/pages/profile/profile.html"\n` +
       `                            class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"\n` +
       `                            >Settings</a\n` +
       `                        >\n` +
@@ -272,7 +272,7 @@ const SHELL = {
       `                            >Profile</a\n` +
       `                        >\n` +
       `                        <a\n` +
-      `                            href="/pages/profile/settings.html"\n` +
+      `                            href="/pages/profile/profile.html"\n` +
       `                            class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"\n` +
       `                            >Settings</a\n` +
       `                        >\n` +

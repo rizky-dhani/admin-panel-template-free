@@ -8,14 +8,6 @@
         {
           "label": "Analytics",
           "href": "/pages/dashboards/analytics.html"
-        },
-        {
-          "label": "E-commerce",
-          "href": "/pages/dashboards/ecommerce.html"
-        },
-        {
-          "label": "Minimal",
-          "href": "/pages/dashboards/minimal.html"
         }
       ]
     },
@@ -27,18 +19,6 @@
         {
           "label": "Dark Sidebar",
           "href": "/pages/layouts/sidebar-dark.html"
-        },
-        {
-          "label": "Light Sidebar",
-          "href": "/pages/layouts/sidebar-light.html"
-        },
-        {
-          "label": "Top Navigation",
-          "href": "/pages/layouts/topnav.html"
-        },
-        {
-          "label": "Collapsible Sidebar",
-          "href": "/pages/layouts/sidebar-collapsible.html"
         }
       ]
     },
@@ -50,14 +30,6 @@
         {
           "label": "Standard Table",
           "href": "/pages/tables/table-standard.html"
-        },
-        {
-          "label": "Card Table",
-          "href": "/pages/tables/table-card.html"
-        },
-        {
-          "label": "Dense Table",
-          "href": "/pages/tables/table-dense.html"
         }
       ]
     },
@@ -69,14 +41,6 @@
         {
           "label": "Basic Form",
           "href": "/pages/forms/form-basic.html"
-        },
-        {
-          "label": "Advanced Form",
-          "href": "/pages/forms/form-advanced.html"
-        },
-        {
-          "label": "Validation",
-          "href": "/pages/forms/form-validation.html"
         }
       ]
     },
@@ -88,14 +52,6 @@
         {
           "label": "Centered Card",
           "href": "/pages/auth/login-centered.html"
-        },
-        {
-          "label": "Split Layout",
-          "href": "/pages/auth/login-split.html"
-        },
-        {
-          "label": "Modern Gradient",
-          "href": "/pages/auth/login-modern.html"
         }
       ]
     },
@@ -107,14 +63,6 @@
         {
           "label": "Buttons",
           "href": "/pages/components/buttons.html"
-        },
-        {
-          "label": "Badges & Alerts",
-          "href": "/pages/components/badges-alerts.html"
-        },
-        {
-          "label": "Cards",
-          "href": "/pages/components/cards.html"
         }
       ]
     },
@@ -126,14 +74,6 @@
         {
           "label": "User Profile",
           "href": "/pages/profile/profile.html"
-        },
-        {
-          "label": "Account Settings",
-          "href": "/pages/profile/settings.html"
-        },
-        {
-          "label": "Notifications",
-          "href": "/pages/profile/notifications.html"
         }
       ]
     },
@@ -143,16 +83,8 @@
       "icon": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
       "pages": [
         {
-          "label": "Bar Chart",
-          "href": "/pages/charts/chart-bars.html"
-        },
-        {
           "label": "Line Chart",
           "href": "/pages/charts/chart-line.html"
-        },
-        {
-          "label": "Donut & Pie",
-          "href": "/pages/charts/chart-donut.html"
         }
       ]
     },
@@ -162,16 +94,8 @@
       "icon": "M4 6h16M4 12h16M4 18h16",
       "pages": [
         {
-          "label": "Sidebar Navigation",
-          "href": "/pages/navigation/sidebar-navigation.html"
-        },
-        {
           "label": "Breadcrumbs",
           "href": "/pages/navigation/breadcrumbs.html"
-        },
-        {
-          "label": "Pagination",
-          "href": "/pages/navigation/pagination.html"
         }
       ]
     },
@@ -183,14 +107,6 @@
         {
           "label": "Basic Modals",
           "href": "/pages/modals/modal-basic.html"
-        },
-        {
-          "label": "Confirmation",
-          "href": "/pages/modals/modal-confirmation.html"
-        },
-        {
-          "label": "Form Modals",
-          "href": "/pages/modals/modal-form.html"
         }
       ]
     },
@@ -202,14 +118,6 @@
         {
           "label": "Notifications",
           "href": "/pages/toasts/toast-notifications.html"
-        },
-        {
-          "label": "Positions",
-          "href": "/pages/toasts/toast-positions.html"
-        },
-        {
-          "label": "Stacked",
-          "href": "/pages/toasts/toast-stacked.html"
         }
       ]
     },
@@ -221,14 +129,6 @@
         {
           "label": "404 Not Found",
           "href": "/pages/errors/error-404.html"
-        },
-        {
-          "label": "403 Forbidden",
-          "href": "/pages/errors/error-403.html"
-        },
-        {
-          "label": "500 Server Error",
-          "href": "/pages/errors/error-500.html"
         }
       ]
     },
@@ -240,14 +140,6 @@
         {
           "label": "User List",
           "href": "/pages/users/user-list.html"
-        },
-        {
-          "label": "User Grid",
-          "href": "/pages/users/user-grid.html"
-        },
-        {
-          "label": "User Profile",
-          "href": "/pages/users/user-profile.html"
         }
       ]
     },
@@ -259,33 +151,6 @@
         {
           "label": "Simple Plans",
           "href": "/pages/pricing/pricing-simple.html"
-        },
-        {
-          "label": "Comparison",
-          "href": "/pages/pricing/pricing-comparison.html"
-        },
-        {
-          "label": "Billing Toggle",
-          "href": "/pages/pricing/pricing-toggle.html"
-        }
-      ]
-    },
-    {
-      "key": "workspace",
-      "label": "Workspace",
-      "icon": "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
-      "pages": [
-        {
-          "label": "General Settings",
-          "href": "/pages/workspace/workspace-general.html"
-        },
-        {
-          "label": "Team Members",
-          "href": "/pages/workspace/workspace-members.html"
-        },
-        {
-          "label": "Billing",
-          "href": "/pages/workspace/workspace-billing.html"
         }
       ]
     },
@@ -297,14 +162,6 @@
         {
           "label": "Empty States",
           "href": "/pages/states/state-empty.html"
-        },
-        {
-          "label": "Loading States",
-          "href": "/pages/states/state-loading.html"
-        },
-        {
-          "label": "Error States",
-          "href": "/pages/states/state-error.html"
         }
       ]
     },
@@ -316,33 +173,6 @@
         {
           "label": "Month Calendar",
           "href": "/pages/calendar/calendar-month.html"
-        },
-        {
-          "label": "Week Calendar",
-          "href": "/pages/calendar/calendar-week.html"
-        },
-        {
-          "label": "Timeline",
-          "href": "/pages/calendar/timeline.html"
-        }
-      ]
-    },
-    {
-      "key": "social",
-      "label": "Social",
-      "icon": "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z",
-      "pages": [
-        {
-          "label": "Social Feed",
-          "href": "/pages/social/feed.html"
-        },
-        {
-          "label": "Messages",
-          "href": "/pages/social/messages.html"
-        },
-        {
-          "label": "Notifications",
-          "href": "/pages/social/notifications.html"
         }
       ]
     }
